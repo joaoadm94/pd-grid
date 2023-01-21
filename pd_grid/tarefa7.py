@@ -8,13 +8,13 @@ import numpy as np
 # definição das variáveis dos experimentos 
 # que serão controladas (valor fixo) ou manipuladas
 #params = {"N": 200, "width": 10, "height": 10, "D": np.arange(0, 1, 0.2)}
-params = {"width": 50, "height": 50, "schedule_type": "Random", "defect_multiplier": 1, "payoffs": None, "seed": None}
+params = {"defect_multiplier": range(12,22,1), "width": 50, "height": 50, "schedule_type": "Simultaneous", "payoffs": None, "seed": None}
 
 
 # define a quantidade de experimentos 
 # que serão repetidos para cada configuração de valores
 # para as variáveis (de controle e independentes) 
-experiments_per_parameter_configuration = 300
+experiments_per_parameter_configuration = 30
 
 # quantidade de passos suficientes para que a simulação
 # alcance um estado de equilíbrio (steady state)

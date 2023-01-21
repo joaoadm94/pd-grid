@@ -1,4 +1,18 @@
-# Projeto de alteração no modelo "Demographic Prisoner's Dilemma on a Grid"
+# Tarefa 7 - Experimentação Estatística e Exploratória
+
+Após alterar o modelo na Tarefa 6 passou-se à etapa experimental na tarefa 7. 
+
+Buscou-se realizar um processamento de dezenas de experimentos modulando o valor de bônus de defecção adicionado na customização da Tarefa 6.
+
+Os resultados obtidos foram analisados por meio do RStudio. Gerou-se boxplots e histogramas utilizando os comandos *boxplot()* e *hist()*.
+
+O intuito foi verificar a hipótese causal definida na Tarefa 6: "*A recompensa por traição tem impacto proporcional na variação da população de agentes traidores*".
+
+Pelos resultados obtidos, concluí-se pela existência de uma relação entre o bônus de defeccção e a população de traidores. De fato, quando o bônus é maior a população de traidores se mantém dominante no cenário dos agentes. Entretanto, a relação não parece ser exatamente proporcional visto que nos estados finais o tabuleiro é sempre tomado majoritariamente por uma estratégia. São poucos os cenários que atingem estabilidade com um equilíbro entre as populações de agentes.
+
+O relatório completo segue em desenvolvimento no Overleaf.
+
+# Tarefa 6 - Projeto de alteração no modelo "Demographic Prisoner's Dilemma on a Grid"
 
 O modelo neste repositório é baseado no exemplo PD_Grid do framework Mesa.
 

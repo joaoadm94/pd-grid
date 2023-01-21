@@ -1,6 +1,6 @@
 import mesa
 
-from .agent import PDAgent
+from agent import PDAgent
 
 def get_num_coop_agents(model):
     """return number of cooperating agents"""
@@ -28,14 +28,12 @@ class PdGrid(mesa.Model):
     # This dictionary holds the payoff for this agent,
     # keyed on: (my_move, other_move)
 
-    defect_multiplier = 1
-
     payoff = {("C", "C"): 1, ("C", "D"): 0, ("D", "C"): 1.6, ("D", "D"): 0}
 
     starting_payoff_dc = payoff[('D', 'C')]
 
     def __init__(
-        self, width=50, height=50, schedule_type="Random", defect_multiplier=1, payoffs=None, seed=None
+        self, defect_multiplier, width=50, height=50, schedule_type="Random", payoffs=None, seed=None
     ):
         """
         Create a new Spatial Prisoners' Dilemma Model.
@@ -49,9 +47,7 @@ class PdGrid(mesa.Model):
         self.grid = mesa.space.SingleGrid(width, height, torus=True)
         self.schedule_type = schedule_type
         self.schedule = self.schedule_types[self.schedule_type](self)
-        self.payoff[('D', 'C')] = self.starting_payoff_dc * (1 + (defect_multiplier/10))
-        print(defect_multiplier)
-        print(self.payoff[('D', 'C')])
+        self.payoff[('D', 'C')] = defect_multiplier/10
 
         # Create agents
         for x in range(width):
